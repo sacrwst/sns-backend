@@ -16,11 +16,9 @@ const UserScheme = new mongoose.Schema({
   },
   profilePicture: {
     type: String,
-    required: true,
   },
   coverPicture: {
     type: String,
-    required: true,
   },
   followers: {
     type: Array,
@@ -41,3 +39,5 @@ const UserScheme = new mongoose.Schema({
     type: String,
   }
 }, {timestamps: true})
+
+module.exports = mongoose.model('User', UserScheme)
