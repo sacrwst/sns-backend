@@ -4,6 +4,16 @@ const userRoute = require('./routes/users')
 const authRoute = require('./routes/auth')
 const postsRoute = require('./routes/posts')
 const PORT = 3000
+const mongoose = require('mongoose')
+require('dotenv').config()
+
+mongoose.connect(process.env.MONGOURL)
+ .then(() => {
+  console.log('Connecting to DB')
+ })
+ .catch(() => {
+  console.log('error')
+ })
 
 
 app.use('/api/users', userRoute)
